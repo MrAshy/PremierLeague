@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@+id/fixtures_root_container"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp"
+    android:paddingBottom="4dp"
+    >
+    <LinearLayout
+        android:id="@+id/vertical_layout"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="vertical">
+
+        <com.pms.kirillbaranov.premierleague.ui.TypeFaceTextView
+            android:id="@+id/date_value_text_view"
+            style="@style/WrapContent"
+            android:minWidth="20dp"
+            android:maxLines="1"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/small"
+            android:gravity="center"
+            android:text="11 November 17:00"
+            android:textColor="@color/black_opacity_87"
+            android:textSize="20sp"
+            app:typeFace="roboto_bold"
+            />
+
+        <LinearLayout
+        android:id="@+id/status_information_layout"
+        style="@style/WrapContent"
+        android:orientation="horizontal">
+            <com.pms.kirillbaranov.premierleague.ui.TypeFaceTextView
+                android:id="@+id/status_text_text_view"
+                style="@style/WrapContent"
+                android:minWidth="20dp"
+                android:maxLines="1"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/small"
+                android:gravity="center"
+                android:text="@string/_status"
+                android:textColor="@color/black_opacity_87"
+                android:textSize="20sp"
+                app:typeFace="roboto_bold"
+                />
+
+            <com.pms.kirillbaranov.premierleague.ui.TypeFaceTextView
+                android:id="@+id/status_value_text_view"
+                style="@style/WrapContent"
+                android:minWidth="20dp"
+                android:maxLines="1"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/small"
+                android:gravity="center"
+                android:text="FINISHED"
+                android:textColor="@color/orange_dark"
+                android:textSize="20sp"
+                app:typeFace="roboto_bold"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/basic_information_layout"
+            style="@style/WrapContent"
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal">
+
+            <com.pms.kirillbaranov.premierleague.ui.TypeFaceTextView
+                android:id="@+id/home_team_text_view"
+                style="@style/WrapContent"
+                android:minWidth="20dp"
+                android:maxLines="1"
+                android:layout_centerVertical="true"
+
+                android:gravity="center"
+                android:text="Manchester United FC"
+                android:textColor="@color/black_opacity_87"
+                android:textSize="14sp"
+                app:typeFace="roboto_bold"
+                />
+
+            <com.pms.kirillbaranov.premierleague.ui.TypeFaceTextView
+                android:id="@+id/home_team_goals_text_view"
+                style="@style/WrapContent"
+                android:minWidth="20dp"
+                android:maxLines="1"
+                android:layout_toEndOf="@+id/home_team_text_view"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:gravity="center"
+                android:text="3"
+                android:textColor="@color/black_opacity_87"
+                android:textSize="20sp"
+                app:typeFace="roboto_bold"
+                android:background="@drawable/image_view_dark_border"
+                />
+            <com.pms.kirillbaranov.premierleague.ui.TypeFaceTextView
+                android:id="@+id/separator_text_view"
+                style="@style/WrapContent"
+                android:minWidth="20dp"
+                android:maxLines="1"
+                android:layout_toEndOf="@+id/home_team_goals_text_view"
+                android:layout_centerVertical="true"
+
+                android:gravity="center"
+                android:text=":"
+                android:textColor="@color/black_opacity_87"
+                android:textSize="20sp"
+                app:typeFace="roboto_bold"
+                />
+
+            <com.pms.kirillbaranov.premierleague.ui.TypeFaceTextView
+                android:id="@+id/away_team_goals_text_view"
+                style="@style/WrapContent"
+                android:minWidth="20dp"
+                android:maxLines="1"
+                android:layout_toEndOf="@+id/separator_text_view"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"
+                android:gravity="center"
+                android:text="1"
+                android:textColor="@color/black_opacity_87"
+                android:textSize="20sp"
+                app:typeFace="roboto_bold"
+                android:background="@drawable/image_view_dark_border"
+                />
+            <com.pms.kirillbaranov.premierleague.ui.TypeFaceTextView
+                android:id="@+id/away_team_text_view"
+                style="@style/WrapContent"
+                android:minWidth="20dp"
+                android:maxLines="1"
+                android:layout_toEndOf="@+id/away_team_goals_text_view"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/small"
+                android:gravity="center"
+                android:text="Tottenham Hotspur"
+                android:textColor="@color/black_opacity_87"
+                android:textSize="14sp"
+                app:typeFace="roboto_bold"
+                />
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

@@ -1,0 +1,123 @@
+<android.support.v4.widget.DrawerLayout android:id="@+id/base_drawer_layout"
+    style="@style/MatchParent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout style="@style/MatchParent">
+        <ViewStub
+            android:id="@+id/content"
+            style="@style/MatchParent"
+
+            android:layout_alignParentTop="true"/>
+    </RelativeLayout>
+
+    <android.support.percent.PercentFrameLayout
+        android:id="@+id/left_drawer"
+        style="@style/FullHeight"
+        android:elevation="2dp">
+
+        <LinearLayout
+            style="@style/FullHeight"
+            android:layout_width="300dp"
+            android:background="@color/white_opacity_100"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="@color/primaryColorDark">
+
+                <ImageView
+                    style="@style/MatchParent"
+                    android:src="@drawable/pl"
+                    android:scaleType="fitXY"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout style="@style/MatchParent">
+
+                <com.pms.kirillbaranov.premierleague.ui.TypeFaceButton
+                    android:id="@+id/league_table_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="@dimen/small"
+                    android:background="@drawable/transparent_flat_gfx"
+                    android:gravity="center_vertical|start"
+                    android:paddingLeft="@dimen/very_huge"
+                    android:text="@string/_league_table"
+                    android:textColor="@color/black_opacity_87"
+                    android:textSize="16sp"
+                    app:typeFace="roboto_medium"/>
+
+                <com.pms.kirillbaranov.premierleague.ui.TypeFaceTextView
+                    android:id="@+id/league_icon_text_view"
+                    android:layout_height="50dp"
+                    android:layout_width="50dp"
+                    android:layout_marginTop="@dimen/small"
+                    android:textColor="@color/black_opacity_38"
+                    android:textSize="25sp"
+                    android:gravity="center"
+                    android:text="@string/ico_ion_league_table"
+                    app:typeFace="ionicons"/>
+
+                <com.pms.kirillbaranov.premierleague.ui.TypeFaceButton
+                    android:id="@+id/teams_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_below="@+id/league_table_button"
+                    android:background="@drawable/transparent_flat_gfx"
+                    android:gravity="center_vertical|start"
+                    android:paddingLeft="@dimen/very_huge"
+                    android:textColor="@color/black_opacity_87"
+                    android:text="@string/_teams"
+                    android:textSize="16sp"
+                    app:typeFace="roboto_medium"/>
+
+                <com.pms.kirillbaranov.premierleague.ui.TypeFaceTextView
+                    android:id="@+id/teams_icon_text_view"
+                    android:layout_height="50dp"
+                    android:layout_width="50dp"
+                    android:layout_below="@+id/league_table_button"
+                    android:textColor="@color/black_opacity_38"
+                    android:textSize="25sp"
+                    android:gravity="center"
+                    android:text="@string/ico_icon_teams"
+                    app:typeFace="ionicons"/>
+
+                <com.pms.kirillbaranov.premierleague.ui.TypeFaceButton
+                    android:id="@+id/fixtures_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_below="@+id/teams_button"
+                    android:background="@drawable/transparent_flat_gfx"
+                    android:gravity="center_vertical|start"
+                    android:paddingLeft="@dimen/very_huge"
+                    android:textColor="@color/black_opacity_87"
+                    android:text="@string/_fixtures"
+                    android:textSize="16sp"
+                    app:typeFace="roboto_medium"/>
+
+                <com.pms.kirillbaranov.premierleague.ui.TypeFaceTextView
+                    android:id="@+id/fixtures_icon_text_view"
+                    android:layout_height="50dp"
+                    android:layout_width="50dp"
+                    android:layout_below="@+id/teams_button"
+                    android:textColor="@color/black_opacity_38"
+                    android:textSize="25sp"
+                    android:gravity="center"
+                    android:text="@string/ico_icon_fixtures"
+                    app:typeFace="ionicons"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="@color/primaryColorDark">
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </android.support.percent.PercentFrameLayout>
+
+</android.support.v4.widget.DrawerLayout>

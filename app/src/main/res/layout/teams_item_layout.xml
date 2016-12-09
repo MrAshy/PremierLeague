@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@+id/teams_root_container"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp"
+    android:paddingBottom="4dp">
+
+    <ImageView
+        android:id="@+id/teams_team_image_view"
+        style="@style/WrapContent"
+        android:layout_toEndOf="@+id/ranking_text_view"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="@dimen/small"
+        android:scaleType="fitXY"
+        android:background="@drawable/image_view_dark_border"
+        />
+
+    <LinearLayout
+        android:id="@+id/basic_teams_layout"
+        style="@style/WrapContent"
+        android:orientation="vertical"
+        android:layout_toEndOf="@+id/teams_team_image_view"
+        >
+
+        <com.pms.kirillbaranov.premierleague.ui.TypeFaceTextView
+            android:id="@+id/teams_name_text_view"
+            style="@style/WrapContent"
+            android:minWidth="20dp"
+            android:maxLines="1"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/small"
+            android:gravity="center"
+            android:text="Manchester United FC"
+            android:textColor="@color/black_opacity_87"
+            android:textSize="25sp"
+            app:typeFace="roboto_bold"
+            />
+        <com.pms.kirillbaranov.premierleague.ui.TypeFaceTextView
+            android:id="@+id/code_text_view"
+            style="@style/WrapContent"
+            android:minWidth="20dp"
+            android:maxLines="1"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/small"
+            android:gravity="center"
+            android:text="MUFC"
+            android:textColor="@color/grey_battleship"
+            android:textSize="14sp"
+            app:typeFace="roboto_bold"
+            />
+        <com.pms.kirillbaranov.premierleague.ui.TypeFaceTextView
+            android:id="@+id/market_value_text_text_view"
+            style="@style/WrapContent"
+            android:minWidth="20dp"
+            android:maxLines="1"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/small"
+            android:gravity="center"
+            android:text="MARKET VALUE:"
+            android:textColor="@color/black_opacity_87"
+            android:textSize="14sp"
+            app:typeFace="roboto_bold"
+            />
+        <com.pms.kirillbaranov.premierleague.ui.TypeFaceTextView
+            android:id="@+id/market_value_text_view"
+            style="@style/WrapContent"
+            android:minWidth="20dp"
+            android:maxLines="1"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/small"
+            android:gravity="center"
+            android:text="394,550$"
+            android:textColor="@color/red_ribbon"
+            android:textSize="17sp"
+            app:typeFace="roboto_bold"
+            />
+
+    </LinearLayout>
+
+</RelativeLayout>

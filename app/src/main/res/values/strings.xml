@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Premier League</string>
+
+    <!-- Icons -->
+    <string name="ico_ion_filter"></string>
+    <string name="ico_ion_league_table"></string>
+    <string name="ico_ion_settings"></string>
+    <string name="ico_arrow_left"></string>
+    <string name="ico_icon_fixtures"></string>
+    <string name="ico_icon_teams"></string>
+    <string name="open_drawer">open</string>
+    <string name="close_drawer">close</string>
+
+    <!-- Naming -->
+
+    <string name="_league_table">League Table</string>
+    <string name="_teams">Teams</string>
+    <string name="_fixtures">Fixtures</string>
+    <string name="_pointsText">POINTS:</string>
+    <string name="_goalsText">GOALS:</string>
+    <string name="_goalsAgainst">GC:</string>
+    <string name="_goalsDifference">GD:</string>
+    <string name="_gamesText">GAMES:</string>
+    <string name="_wins">W:</string>
+    <string name="_drawn">D:</string>
+    <string name="_loses">L:</string>
+    <string name="_status">STATUS:</string>
+
+</resources>

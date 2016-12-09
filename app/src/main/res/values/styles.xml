@@ -1,0 +1,140 @@
+<resources>
+
+    <style name="AppBaseTheme" parent="@style/Theme.Fullscreen.ActionBar">
+        <item name="android:actionBarSize">@dimen/action_bar_height</item>
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <item name="android:windowBackground">@color/black_dark_jungle</item>
+        <item name="android:buttonStyle">@style/buttonStyle</item>
+    </style>
+
+    <!-- AppCompat themes and styles -->
+    <style name="BaseTheme.Dark" parent="@style/Theme.AppCompat" />
+    <style name="BaseTheme" parent="@style/Theme.AppCompat.Light" />
+
+    <style name="AppTheme.FullScreen" parent="BaseTheme">
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorPrimaryDark">@color/primaryColorDark</item>
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="windowActionModeOverlay">true</item>
+        <item name="actionModeStyle">@style/ActionMode</item>
+        <item name="android:actionModeStyle">@style/ActionMode</item>
+        <item name="android:actionModeCloseDrawable">@drawable/ic_arrow_back_white_36dp</item>
+        <item name="android:windowBackground">@color/grey_alto</item>
+        <item name="android:buttonStyle">@style/buttonStyle</item>
+        <item name="colorControlNormal">@color/white</item>
+        <item name="colorControlActivated">@color/white</item>
+        <item name="colorControlHighlight">@color/white</item>
+    </style>
+
+    <style name="ActionMode" parent="Widget.AppCompat.ActionMode">
+        <item name="android:background">@color/primaryColor</item>
+        <item name="background">@color/primaryColor</item>
+        <item name="height">@dimen/toolbar_min_height</item>
+        <item name="android:titleTextStyle">@style/TempTitleStyle</item>
+        <item name="titleTextStyle">@style/TempTitleStyle</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <style name="buttonStyle" parent="@android:style/Widget.Button">
+        <item name="android:background">@drawable/gray_button_gfx</item>
+        <item name="android:textColor">@color/gray_text_gfx</item>
+    </style>
+
+    <style name="TempTitleStyle">
+        <item name="android:textSize">25sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="WrapContent">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="FullWidth">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="FullHeight">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="FillParent">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+    </style>
+
+    <style name="MatchParent">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="Theme"></style>
+
+    <style name="Theme.Fullscreen" parent="@android:style/Theme.Holo">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="Theme.Fullscreen.NoTitle" parent="Theme.Fullscreen">
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.Fullscreen.DefaultActionBar" parent="Theme.Fullscreen">
+        <item name="android:actionBarSize">@dimen/action_item_small_height</item>
+        <item name="android:actionBarStyle">@style/ActionBarStyle</item>
+        <item name="android:typeface">sans</item>
+    </style>
+
+    <style name="Theme.Fullscreen.ActionBar" parent="Theme.Fullscreen">
+        <item name="android:actionBarSize">@dimen/action_item_height</item>
+        <item name="android:actionButtonStyle">@style/ActionButtonStyle</item>
+        <item name="android:actionBarStyle">@style/ActionBarStyle</item>
+        <item name="android:typeface">sans</item>
+    </style>
+    <style name="Theme.Fullscreen.NoIconNoTitle" parent="Theme.Fullscreen">
+        <item name="android:actionBarSize">@dimen/action_item_height</item>
+        <item name="android:actionBarStyle">@style/ActionBar.NoIconNoTitle</item>
+    </style>
+    <style name="ActionBar.NoIconNoTitle" parent="@android:style/Widget.Holo.Light.ActionBar.Solid">
+        <item name="android:displayOptions">useLogo</item>
+        <item name="android:background">@android:color/black</item>
+    </style>
+
+    <style name="Theme.OverlayActivity" parent="@android:style/Theme.Holo">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <style name="Theme.OverlayActivity.Fullscreen" parent="Theme.OverlayActivity">
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="ActionBarStyle" parent="@android:style/Widget.Holo.ActionBar">
+        <item name="android:icon">@drawable/action_bar_side_menu_btn</item>
+        <!-- <item name="android:displayOptions">homeAsUp | showTitle</item> -->
+    </style>
+
+    <style name="ActionButtonStyle" parent="@android:style/Widget.Holo.Light.ActionButton">
+        <item name="android:height">@dimen/very_gigantic</item>
+        <item name="android:width">@dimen/very_gigantic</item>
+    </style>
+
+    <style name="ActionBarRootContainer">
+        <item name="android:paddingBottom">2dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/action_bar_height</item>
+    </style>
+    <style name="AppCompatDialogLight" parent="@style/Theme.AppCompat.Light.Dialog" />
+
+</resources>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- ......... typeFace .......... -->
+    <attr name="typeFace">
+        <enum name="normal_font" value="-1" />
+        <enum name="roboto_condensed" value="0" />
+        <enum name="roboto_light" value="1" />
+        <enum name="roboto_regular" value="2" />
+        <enum name="fontello" value="3" />
+        <enum name="webhostinghub_glyphs" value="4" />
+        <enum name="roboto_bold" value="5" />
+        <enum name="roboto_black" value="6" />
+        <enum name="roboto_thin" value="7" />
+        <enum name="roboto_bold_condensed" value="8" />
+        <enum name="roboto_condensed_italic" value="9" />
+        <enum name="ionicons" value="10" />
+        <enum name="roboto_condensed_light" value="11" />
+        <enum name="roboto_medium" value="12" />
+        <enum name="streamline_24px" value="13" />
+        <enum name="streamline_24px_filled_in" value="14" />
+        <enum name="icomoon" value="15" />
+    </attr>
+
+    <declare-styleable name="TypeFaceTextView">
+        <attr name="typeFace" />
+    </declare-styleable>
+
+    <declare-styleable name="TypeFaceButton">
+        <attr name="typeFace" />
+    </declare-styleable>
+
+    <declare-styleable name="TypeFaceRadioButton">
+        <attr name="typeFace" />
+    </declare-styleable>
+</resources>
