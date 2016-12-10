@@ -48,7 +48,8 @@
         android:id="@+id/content_layout"
         style="@style/WrapContent"
         android:orientation="vertical"
-        android:layout_toEndOf="@+id/team_text_view"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
         >
         <LinearLayout
             style="@style/WrapContent"

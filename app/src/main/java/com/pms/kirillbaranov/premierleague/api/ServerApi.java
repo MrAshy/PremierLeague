@@ -23,6 +23,8 @@ import okhttp3.Response;
 public class ServerApi {
 
     private static final String URL = "http://api.football-data.org/v1/";
+    private static final String TOKEN_KEY_NAME = "X-Auth-Token";
+    private static final String TOKEN_KEY_VALUE = "54d182d8d9c74bd89ca275fa325d2e24";
 
     private final static ServerApi sInstance = new ServerApi();
 
@@ -34,6 +36,7 @@ public class ServerApi {
         OkHttpClient client = new OkHttpClient();
 
         Request request = new Request.Builder()
+                .header(TOKEN_KEY_NAME, TOKEN_KEY_VALUE)
                 .url(URL + uri)
                 .build();
 
@@ -70,8 +73,8 @@ public class ServerApi {
     }
 
     public LeagueTable readLeagueTable() {
-        Collection<LeagueTable> leagueTables = getArrayResponse("competitions/426/leagueTable", LeagueTable.class);
-        return Stream.of(leagueTables).findFirst().orElse(null);
+        LeagueTable leagueTable = getObjectResponse("competitions/426/leagueTable", LeagueTable.class);
+        return leagueTable;
     }
 
     private Collection<Team> readTeams() {
