@@ -1,6 +1,7 @@
 package com.pms.kirillbaranov.premierleague.view;
 
 import com.pms.kirillbaranov.premierleague.entity.Team;
+import com.pms.kirillbaranov.premierleague.entity.Wrapper.ResponseWrapper;
 
 import java.util.Collection;
 
@@ -9,5 +10,5 @@ import java.util.Collection;
  */
 
 public interface ITeamsView {
-    void setContent(Collection<Team> teams);
+    void setContent(ResponseWrapper responseWrapper);
 }

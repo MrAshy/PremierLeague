@@ -2,6 +2,7 @@ package com.pms.kirillbaranov.premierleague.model;
 
 import com.pms.kirillbaranov.premierleague.business.TeamsBusiness;
 import com.pms.kirillbaranov.premierleague.entity.Team;
+import com.pms.kirillbaranov.premierleague.entity.Wrapper.ResponseWrapper;
 
 import java.util.Collection;
 
@@ -11,7 +12,7 @@ import java.util.Collection;
 
 public class TeamsModel {
 
-    public Collection<Team> getTeams() {
+    public ResponseWrapper getTeams() {
         return new TeamsBusiness().readTeams();
     }
 }

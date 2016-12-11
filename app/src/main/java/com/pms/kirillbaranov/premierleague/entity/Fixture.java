@@ -37,7 +37,7 @@ public class Fixture {
     private Result result;
 
     public Date getDate() {
-        return DateHelper.parseUtcIso(date);
+        return DateHelper.getDateFromUtcString2(date);
     }
 
     public String getStatus() {

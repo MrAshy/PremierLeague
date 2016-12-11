@@ -1,6 +1,7 @@
 package com.pms.kirillbaranov.premierleague.view;
 
 import com.pms.kirillbaranov.premierleague.entity.Player;
+import com.pms.kirillbaranov.premierleague.entity.Wrapper.ResponseWrapper;
 
 import java.util.Collection;
 
@@ -9,5 +10,5 @@ import java.util.Collection;
  */
 
 public interface IPlayersView {
-    public void setContent(Collection<Player> players);
+    public void setContent(ResponseWrapper responseWrapper);
 }

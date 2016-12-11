@@ -2,6 +2,7 @@ package com.pms.kirillbaranov.premierleague.model;
 
 import com.pms.kirillbaranov.premierleague.business.FixturesBusiness;
 import com.pms.kirillbaranov.premierleague.entity.Fixture;
+import com.pms.kirillbaranov.premierleague.entity.Wrapper.ResponseWrapper;
 
 import java.util.Collection;
 
@@ -11,7 +12,7 @@ import java.util.Collection;
 
 public class FixturesModel {
 
-    public Collection<Fixture> getFixtures() {
+    public ResponseWrapper getFixtures() {
         return new FixturesBusiness().readFixtures();
     }
 }

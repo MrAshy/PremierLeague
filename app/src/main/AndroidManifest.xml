@@ -22,6 +22,12 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name="com.pms.kirillbaranov.premierleague.activity.TeamsActivity"
+            android:screenOrientation="portrait" android:theme="@style/AppTheme.FullScreen">
+        </activity>
+        <activity android:name="com.pms.kirillbaranov.premierleague.activity.FixturesActivity"
+            android:screenOrientation="portrait" android:theme="@style/AppTheme.FullScreen">
+        </activity>
     </application>
 
 </manifest>

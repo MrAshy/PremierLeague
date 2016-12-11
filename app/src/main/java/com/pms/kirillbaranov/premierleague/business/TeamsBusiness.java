@@ -2,6 +2,7 @@ package com.pms.kirillbaranov.premierleague.business;
 
 import com.pms.kirillbaranov.premierleague.api.ServerApi;
 import com.pms.kirillbaranov.premierleague.entity.Team;
+import com.pms.kirillbaranov.premierleague.entity.Wrapper.ResponseWrapper;
 
 import java.util.Collection;
 
@@ -11,8 +12,8 @@ import java.util.Collection;
 
 public class TeamsBusiness {
 
-    public Collection<Team> readTeams() {
-        Collection<Team> teams = ServerApi.getInstance().readTeams();
-        return teams;
+    public ResponseWrapper readTeams() {
+        ResponseWrapper responseWrapper = ServerApi.getInstance().readTeams();
+        return responseWrapper;
     }
 }

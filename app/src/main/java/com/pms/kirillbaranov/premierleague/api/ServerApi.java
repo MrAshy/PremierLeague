@@ -8,6 +8,7 @@ import com.pms.kirillbaranov.premierleague.entity.Fixture;
 import com.pms.kirillbaranov.premierleague.entity.LeagueTable;
 import com.pms.kirillbaranov.premierleague.entity.Player;
 import com.pms.kirillbaranov.premierleague.entity.Team;
+import com.pms.kirillbaranov.premierleague.entity.Wrapper.ResponseWrapper;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -79,16 +80,16 @@ public class ServerApi {
         return leagueTable;
     }
 
-    public Collection<Team> readTeams() {
-        return getArrayResponse(URL+"competitions/426/teams", Team.class);
+    public ResponseWrapper readTeams() {
+        return getObjectResponse(URL+"competitions/426/teams", ResponseWrapper.class);
     }
 
-    public Collection<Fixture> readFixtures() {
-        return getArrayResponse(URL+"competitions/426/fixtures?matchday=15", Fixture.class);
+    public ResponseWrapper readFixtures() {
+        return getObjectResponse(URL+"competitions/426/fixtures?matchday=15", ResponseWrapper.class);
     }
 
-    public Collection<Player> readPlayers(String playerURL) {
-        return getArrayResponse(playerURL, Player.class);
+    public ResponseWrapper readPlayers(String playerURL) {
+        return getObjectResponse(playerURL, ResponseWrapper.class);
     }
     
 

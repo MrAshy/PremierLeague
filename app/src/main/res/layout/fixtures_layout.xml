@@ -3,14 +3,17 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     style="@style/MatchParent">
 
+    <include layout="@layout/toolbar"></include>
+
     <ProgressBar
-        android:id="@+id/teams_progress_bar"
+        android:id="@+id/fixtures_progress_bar"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_centerInParent="true"
         android:visibility="invisible"/>
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/table_league_recycler_view"
-        style="@style/MatchParent"/>
+        android:id="@+id/fixtures_recycler_view"
+        style="@style/MatchParent"
+        android:layout_below="@+id/toolbar"/>
 </RelativeLayout>

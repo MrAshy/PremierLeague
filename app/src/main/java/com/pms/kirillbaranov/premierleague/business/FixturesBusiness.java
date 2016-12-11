@@ -2,6 +2,7 @@ package com.pms.kirillbaranov.premierleague.business;
 
 import com.pms.kirillbaranov.premierleague.api.ServerApi;
 import com.pms.kirillbaranov.premierleague.entity.Fixture;
+import com.pms.kirillbaranov.premierleague.entity.Wrapper.ResponseWrapper;
 
 import java.util.Collection;
 
@@ -11,8 +12,8 @@ import java.util.Collection;
 
 public class FixturesBusiness {
 
-    public Collection<Fixture> readFixtures() {
-        Collection<Fixture> fixtures = ServerApi.getInstance().readFixtures();
-        return fixtures;
+    public ResponseWrapper readFixtures() {
+        ResponseWrapper responseWrapper = ServerApi.getInstance().readFixtures();
+        return responseWrapper;
     }
 }

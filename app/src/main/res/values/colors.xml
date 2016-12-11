@@ -6,6 +6,7 @@
     <!-- 200 --><color name="primaryColorLight">#A5D6A7</color>
     <!-- 700 --><color name="primaryColor">#C10051</color>
     <!-- 800 --><color name="primaryColorDark">#9D0043</color>
+    <!-- 500 --><color name="purple">#EF9A9A</color>
 
     <!-- White with opacity -->
     <!-- primary   --><color name="white_opacity_100">#FFFFFFFF</color>

@@ -3,6 +3,7 @@ package com.pms.kirillbaranov.premierleague.presenter;
 import android.app.Activity;
 
 import com.pms.kirillbaranov.premierleague.entity.Fixture;
+import com.pms.kirillbaranov.premierleague.entity.Wrapper.ResponseWrapper;
 import com.pms.kirillbaranov.premierleague.model.FixturesModel;
 import com.pms.kirillbaranov.premierleague.ui.RequestTask;
 import com.pms.kirillbaranov.premierleague.view.IFixturesView;
@@ -27,15 +28,15 @@ public class FixturesPresenter {
     }
 
     public void getCurrentFixtures() {
-        ((Activity) mFixturesView).runOnUiThread(new RequestTask<Collection<Fixture>>(mUpdateProgressBehaviour) {
+        ((Activity) mFixturesView).runOnUiThread(new RequestTask<ResponseWrapper>(mUpdateProgressBehaviour) {
             @Override
-            protected Collection<Fixture> doInBackground(Void... params) throws Exception {
+            protected ResponseWrapper doInBackground(Void... params) throws Exception {
                 return mFixturesModel.getFixtures();
             }
 
             @Override
-            protected void onSuccess(Collection<Fixture> fixtures) {
-                mFixturesView.setContent(fixtures);
+            protected void onSuccess(ResponseWrapper responseWrapper) {
+                mFixturesView.setContent(responseWrapper);
             }
         });
     }

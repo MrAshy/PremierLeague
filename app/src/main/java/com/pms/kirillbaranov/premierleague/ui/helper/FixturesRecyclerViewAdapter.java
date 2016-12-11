@@ -39,7 +39,7 @@ public class FixturesRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerVi
         return mFixtures.size();
     }
 
-    public void setTeams(Collection<Fixture> fixtures) {
+    public void setFixtures(Collection<Fixture> fixtures) {
         if (!mFixtures.isEmpty()) mFixtures.clear();
 
         mFixtures.addAll(fixtures);

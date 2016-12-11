@@ -3,6 +3,7 @@ package com.pms.kirillbaranov.premierleague.presenter;
 import android.app.Activity;
 
 import com.pms.kirillbaranov.premierleague.entity.Team;
+import com.pms.kirillbaranov.premierleague.entity.Wrapper.ResponseWrapper;
 import com.pms.kirillbaranov.premierleague.model.TeamsModel;
 import com.pms.kirillbaranov.premierleague.ui.RequestTask;
 import com.pms.kirillbaranov.premierleague.view.ITeamsView;
@@ -27,15 +28,15 @@ public class TeamsPresenter {
     }
 
     public void getCurrentTeams() {
-        ((Activity) mTeamsView).runOnUiThread(new RequestTask<Collection<Team>>(mUpdateProgressBehaviour) {
+        ((Activity) mTeamsView).runOnUiThread(new RequestTask<ResponseWrapper>(mUpdateProgressBehaviour) {
             @Override
-            protected Collection<Team> doInBackground(Void... params) throws Exception {
+            protected ResponseWrapper doInBackground(Void... params) throws Exception {
                 return mTeamsModel.getTeams();
             }
 
             @Override
-            protected void onSuccess(Collection<Team> teams) {
-                mTeamsView.setContent(teams);
+            protected void onSuccess(ResponseWrapper responseWrapper) {
+                mTeamsView.setContent(responseWrapper);
             }
         });
     }

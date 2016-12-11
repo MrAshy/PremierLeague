@@ -12,12 +12,11 @@
     <ImageView
         android:id="@+id/teams_team_image_view"
         style="@style/WrapContent"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_centerVertical="true"
         android:layout_marginEnd="@dimen/small"
         android:scaleType="fitXY"
-        android:background="@drawable/image_view_dark_border"
         />
 
     <LinearLayout

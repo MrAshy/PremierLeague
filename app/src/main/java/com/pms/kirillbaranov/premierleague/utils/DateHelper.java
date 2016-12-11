@@ -84,7 +84,7 @@ public class DateHelper {
      * @param isoString {@link String}  in format YYYY-MM-DDThh:mm:ssZ
      * @return {@link Date} date parsed from iso string.
      */
-    public static Date parseUtcIso(String isoString) {
+    public static Date  parseUtcIso(String isoString) {
         return parse(isoString, YYYY_MM_DD);
     }
     public static Date parse(String string, DateFormatter dateFormatter) {
@@ -103,6 +103,10 @@ public class DateHelper {
 
     public static Date getDateFromUtcString(String utcDateStr) {
         return parse(utcDateStr, ISO_UTC_DATE_TIME_FORMATTER);
+    }
+
+    public static Date getDateFromUtcString2(String utcDateStr) {
+        return parse(utcDateStr, ISO_UTC_DATE_TIME_FORMATTER2);
     }
     public static String getUtcTimeAsIsoString() {
         return ISO_UTC_DATE_TIME_FORMATTER.format(new Date());
