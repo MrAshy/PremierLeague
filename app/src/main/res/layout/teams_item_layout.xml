@@ -12,7 +12,6 @@
     <ImageView
         android:id="@+id/teams_team_image_view"
         style="@style/WrapContent"
-        android:layout_toEndOf="@+id/ranking_text_view"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_centerVertical="true"
@@ -42,7 +41,7 @@
             app:typeFace="roboto_bold"
             />
         <com.pms.kirillbaranov.premierleague.ui.TypeFaceTextView
-            android:id="@+id/code_text_view"
+            android:id="@+id/teams_code_text_view"
             style="@style/WrapContent"
             android:minWidth="20dp"
             android:maxLines="1"
