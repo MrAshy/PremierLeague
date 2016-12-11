@@ -31,7 +31,7 @@ public class LeagueTablePresenter {
         ((Activity) mTableLeagueView).runOnUiThread(new RequestTask<LeagueTable>(mUpdateProgressBehaviour) {
             @Override
             protected LeagueTable doInBackground(Void... params) throws Exception {
-                return mTableLeagueModel.readLeagueTable();
+                return mTableLeagueModel.getLeagueTable();
             }
 
             @Override

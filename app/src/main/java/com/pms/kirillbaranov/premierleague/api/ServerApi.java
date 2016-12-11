@@ -4,7 +4,9 @@ import com.annimon.stream.Stream;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
+import com.pms.kirillbaranov.premierleague.entity.Fixture;
 import com.pms.kirillbaranov.premierleague.entity.LeagueTable;
+import com.pms.kirillbaranov.premierleague.entity.Player;
 import com.pms.kirillbaranov.premierleague.entity.Team;
 
 import java.io.IOException;
@@ -37,7 +39,7 @@ public class ServerApi {
 
         Request request = new Request.Builder()
                 .header(TOKEN_KEY_NAME, TOKEN_KEY_VALUE)
-                .url(URL + uri)
+                .url(uri)
                 .build();
 
         String responseString = null;
@@ -73,12 +75,20 @@ public class ServerApi {
     }
 
     public LeagueTable readLeagueTable() {
-        LeagueTable leagueTable = getObjectResponse("competitions/426/leagueTable", LeagueTable.class);
+        LeagueTable leagueTable = getObjectResponse(URL+"competitions/426/leagueTable", LeagueTable.class);
         return leagueTable;
     }
 
     public Collection<Team> readTeams() {
-        return getArrayResponse("competitions/426/teams", Team.class);
+        return getArrayResponse(URL+"competitions/426/teams", Team.class);
+    }
+
+    public Collection<Fixture> readFixtures() {
+        return getArrayResponse(URL+"competitions/426/fixtures?matchday=15", Fixture.class);
+    }
+
+    public Collection<Player> readPlayers(String playerURL) {
+        return getArrayResponse(playerURL, Player.class);
     }
     
 

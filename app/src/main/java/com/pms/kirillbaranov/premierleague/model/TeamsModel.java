@@ -11,7 +11,7 @@ import java.util.Collection;
 
 public class TeamsModel {
 
-    public Collection<Team> readTeams() {
+    public Collection<Team> getTeams() {
         return new TeamsBusiness().readTeams();
     }
 }

@@ -30,7 +30,7 @@ public class TeamsPresenter {
         ((Activity) mTeamsView).runOnUiThread(new RequestTask<Collection<Team>>(mUpdateProgressBehaviour) {
             @Override
             protected Collection<Team> doInBackground(Void... params) throws Exception {
-                return mTeamsModel.readTeams();
+                return mTeamsModel.getTeams();
             }
 
             @Override

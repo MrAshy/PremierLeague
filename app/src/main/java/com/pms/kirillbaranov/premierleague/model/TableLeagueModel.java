@@ -9,7 +9,7 @@ import com.pms.kirillbaranov.premierleague.entity.LeagueTable;
 
 public class TableLeagueModel {
 
-    public LeagueTable readLeagueTable() {
+    public LeagueTable getLeagueTable() {
         return new TableLeagueBusiness().readTableLeague();
     }
 }
