@@ -7,13 +7,13 @@
         <ViewStub
             android:id="@+id/content"
             style="@style/MatchParent"
-
             android:layout_alignParentTop="true"/>
     </RelativeLayout>
 
     <android.support.percent.PercentFrameLayout
         android:id="@+id/left_drawer"
         style="@style/FullHeight"
+        android:layout_gravity = "start"
         android:elevation="2dp">
 
         <LinearLayout
