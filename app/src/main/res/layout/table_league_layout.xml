@@ -3,6 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     style="@style/MatchParent">
 
+    <include layout="@layout/toolbar"></include>
 
     <ProgressBar
         android:id="@+id/table_league_progress_bar"
@@ -13,5 +14,6 @@
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/table_league_recycler_view"
-        style="@style/MatchParent"/>
+        style="@style/MatchParent"
+        android:layout_below="@+id/toolbar"/>
 </RelativeLayout>

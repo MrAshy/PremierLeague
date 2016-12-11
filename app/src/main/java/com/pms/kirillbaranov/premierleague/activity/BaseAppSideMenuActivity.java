@@ -51,7 +51,7 @@ public class BaseAppSideMenuActivity extends AppCompatActivity {
         contentViewStub.inflate();
     }
 
-    public void initView() {
+    private void initView() {
         mBaseDrawerLayout = (DrawerLayout) findViewById(R.id.base_drawer_layout);
         mSideMenuDrawer = (PercentFrameLayout) findViewById(R.id.left_drawer);
 

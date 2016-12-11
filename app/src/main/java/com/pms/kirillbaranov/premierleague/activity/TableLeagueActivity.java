@@ -68,7 +68,7 @@ public class TableLeagueActivity extends BaseAppSideMenuActivity implements ITab
             mToolbar.setTitle("League Table");
             setSupportActionBar(mToolbar);
 
-            mToolbar.setTitleTextColor(getResources().getColor(R.color.black_opacity_54));
+            mToolbar.setTitleTextColor(getResources().getColor(R.color.white));
             super.initToolbar(mToolbar);
     }
 
