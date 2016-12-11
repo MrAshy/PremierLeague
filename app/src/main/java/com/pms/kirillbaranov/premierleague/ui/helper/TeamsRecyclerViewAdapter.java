@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.pms.kirillbaranov.premierleague.R;
-import com.pms.kirillbaranov.premierleague.entity.Standing;
 import com.pms.kirillbaranov.premierleague.entity.Team;
 import com.pms.kirillbaranov.premierleague.ui.TeamsItemViewHolder;
 

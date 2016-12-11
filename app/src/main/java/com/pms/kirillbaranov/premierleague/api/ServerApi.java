@@ -77,7 +77,7 @@ public class ServerApi {
         return leagueTable;
     }
 
-    private Collection<Team> readTeams() {
+    public Collection<Team> readTeams() {
         return getArrayResponse("competitions/426/teams", Team.class);
     }
     
