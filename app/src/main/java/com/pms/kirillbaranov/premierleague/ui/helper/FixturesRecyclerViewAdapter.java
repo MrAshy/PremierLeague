@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 
 import com.pms.kirillbaranov.premierleague.R;
 import com.pms.kirillbaranov.premierleague.entity.Fixture;
-import com.pms.kirillbaranov.premierleague.entity.Team;
+import com.pms.kirillbaranov.premierleague.ui.FixturesItemViewHolder;
 
 import java.util.ArrayList;
 import java.util.Collection;

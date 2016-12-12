@@ -51,7 +51,7 @@ public class TableLeagueItemViewHolder extends RecyclerView.ViewHolder {
         initView(itemView);
     }
 
-    public void initView(View view) {
+    private void initView(View view) {
         mRankingTextView = (TextView) view.findViewById(R.id.ranking_text_view);
         mTeamImageView = (ImageView) view.findViewById(R.id.team_image_view);
         mTeamNameTextView = (TextView) view.findViewById(R.id.team_text_view);
@@ -101,7 +101,7 @@ public class TableLeagueItemViewHolder extends RecyclerView.ViewHolder {
         mPointsTextView.setText(points);
     }
 
-    public void parseSVG(Context context, String teamImageURL) {
+    private void parseSVG(Context context, String teamImageURL) {
         if (teamImageURL.endsWith(".png")) {
             ImageLoaderManager.getInstance(context).displayImage(teamImageURL, mTeamImageView);
         }

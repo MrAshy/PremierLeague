@@ -25,6 +25,9 @@
     <string name="_drawn">D:</string>
     <string name="_loses">L:</string>
     <string name="_status">STATUS:</string>
+    <string name="_position">Position: </string>
+    <string name="_marketValue">Market value: </string>
+    <string name="_nationality">Nationality: </string>
 
 
 </resources>

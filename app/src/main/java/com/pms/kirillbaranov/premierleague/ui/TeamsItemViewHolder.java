@@ -42,7 +42,7 @@ public class TeamsItemViewHolder extends RecyclerView.ViewHolder {
         initView(itemView);
     }
 
-    public void initView(View view) {
+    private void initView(View view) {
         mTeamNameTextView = (TextView) view.findViewById(R.id.teams_name_text_view);
         mTeamCodeTextView = (TextView) view.findViewById(R.id.teams_code_text_view);
         mTeamMarketValueTextView = (TextView) view.findViewById(R.id.market_value_text_view);
@@ -60,7 +60,7 @@ public class TeamsItemViewHolder extends RecyclerView.ViewHolder {
         mTeamMarketValueTextView.setText(team.getSquadMarketValue());
     }
 
-    public void parseSVG(Context context, String teamImageURL) {
+    private void parseSVG(Context context, String teamImageURL) {
         if (teamImageURL.endsWith(".png")) {
             ImageLoaderManager.getInstance(context).displayImage(teamImageURL, mTeamImageView);
         }
