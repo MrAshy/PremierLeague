@@ -18,6 +18,7 @@ public class Team {
     public static final String SHORT_NAME = "shortName";
     public static final String SQUAD_MARKET_VALUE = "squadMarketValue";
     public static final String IMAGE_URL = "crestUrl";
+    public static final String LINKS = "_links";
 
     @SerializedName(NAME)
     private String name;
@@ -33,6 +34,9 @@ public class Team {
 
     @SerializedName(Team.IMAGE_URL)
     private String imageUrl;
+
+    @SerializedName(Team.LINKS)
+    private Link links;
 
     public String getName() {
         return name;
@@ -54,6 +58,10 @@ public class Team {
         return EMPTY_STRING.equals(imageUrl) || imageUrl.contains(" ")? "http://www.futurumglobal.com/files/4714/2166/9833/generic-profile.png" : imageUrl;
     }
 
+    public Link getLinks() {
+        return links;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -65,6 +73,7 @@ public class Team {
         if (!code.equals(team.code)) return false;
         if (!shortName.equals(team.shortName)) return false;
         if (!squadMarketValue.equals(team.squadMarketValue)) return false;
+        if (!links.equals(team.links)) return false;
         return  (imageUrl.equals(team.imageUrl));
     }
 
@@ -75,6 +84,7 @@ public class Team {
         result = 31 * result + shortName.hashCode();
         result = 31 * result + squadMarketValue.hashCode();
         result = 31 * result + imageUrl.hashCode();
+        result = 31 * result + links.hashCode();
         return result;
     }
 }

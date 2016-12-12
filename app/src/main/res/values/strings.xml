@@ -28,6 +28,9 @@
     <string name="_position">Position: </string>
     <string name="_marketValue">Market value: </string>
     <string name="_nationality">Nationality: </string>
+    <string name="_years"> years</string>
+    <string name="updating_title">Updating&#8230;</string>
+    <string name="players_title">Players</string>
 
 
 </resources>

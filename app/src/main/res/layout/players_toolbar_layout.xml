@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/action_bar_height"
+    android:paddingEnd="@dimen/small">
+
+    <com.pms.kirillbaranov.premierleague.ui.TypeFaceButton
+        android:id="@+id/back_button"
+        android:layout_width="@dimen/huge"
+        android:layout_height="match_parent"
+        android:layout_marginStart="-12dp"
+        android:layout_marginEnd="@dimen/small"
+        android:background="@drawable/transparent_gfx"
+        android:gravity="center"
+        android:text="@string/ico_arrow_left"
+        android:textSize="25sp"
+        app:typeFace="ionicons"/>
+
+    <TextView
+        android:id="@+id/title"
+        style="@style/FullHeight"
+        android:layout_toEndOf="@id/back_button"
+        android:gravity="center_vertical"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:maxLines="1"/>
+
+</RelativeLayout>

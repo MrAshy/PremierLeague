@@ -20,13 +20,16 @@ import java.util.List;
 public class TeamsRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private List<Team> mTeams;
+    private TeamsItemViewHolder.OnTeamClickListener mOnTeamClickListener;
 
-    public TeamsRecyclerViewAdapter() { mTeams = new ArrayList<>(); }
+    public TeamsRecyclerViewAdapter(TeamsItemViewHolder.OnTeamClickListener onTeamClickListener) { mTeams = new ArrayList<>();
+        mOnTeamClickListener = onTeamClickListener;
+    }
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.teams_item_layout, parent, false);
-        return new TeamsItemViewHolder(view);
+        return new TeamsItemViewHolder(view, mOnTeamClickListener);
     }
 
     @Override

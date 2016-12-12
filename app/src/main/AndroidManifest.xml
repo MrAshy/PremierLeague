@@ -28,6 +28,9 @@
         <activity android:name="com.pms.kirillbaranov.premierleague.activity.FixturesActivity"
             android:screenOrientation="portrait" android:theme="@style/AppTheme.FullScreen">
         </activity>
+        <activity android:name="com.pms.kirillbaranov.premierleague.activity.PlayersActivity"
+            android:screenOrientation="portrait" android:theme="@style/AppTheme.FullScreen">
+        </activity>
     </application>
 
 </manifest>

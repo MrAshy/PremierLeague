@@ -29,20 +29,34 @@ import java.io.InputStream;
 
 public class TeamsItemViewHolder extends RecyclerView.ViewHolder {
 
+    private Team mTeam;
+
     private TextView mTeamNameTextView;
     private TextView mTeamCodeTextView;
     private TextView mTeamMarketValueTextView;
     private ImageView mTeamImageView;
 
+    private OnTeamClickListener mOnTeamClickListener;
+
+    private OnSingleClickListener mOnTeamClick = new OnSingleClickListener() {
+        @Override
+        public void onSingleClick(View v) {
+            mOnTeamClickListener.onTeamClick(mTeam);
+        }
+    };
+
+
     private GenericRequestBuilder<Uri, InputStream, SVG, PictureDrawable> requestBuilder;
 
-    public TeamsItemViewHolder(View itemView) {
+    public TeamsItemViewHolder(View itemView, OnTeamClickListener onTeamClickListener) {
         super(itemView);
 
         initView(itemView);
+        mOnTeamClickListener = onTeamClickListener;
     }
 
     private void initView(View view) {
+        view.setOnClickListener(mOnTeamClick);
         mTeamNameTextView = (TextView) view.findViewById(R.id.teams_name_text_view);
         mTeamCodeTextView = (TextView) view.findViewById(R.id.teams_code_text_view);
         mTeamMarketValueTextView = (TextView) view.findViewById(R.id.market_value_text_view);
@@ -50,6 +64,7 @@ public class TeamsItemViewHolder extends RecyclerView.ViewHolder {
     }
 
     public void setContent(Team team) {
+        mTeam = team;
         Context context = mTeamImageView.getContext();
         String teamImageURL = team.getImageUrl();
 
@@ -85,5 +100,9 @@ public class TeamsItemViewHolder extends RecyclerView.ViewHolder {
                     .into(mTeamImageView);
         }
 
+    }
+
+    public interface OnTeamClickListener {
+        void onTeamClick(Team team);
     }
 }

@@ -1,5 +1,6 @@
 package com.pms.kirillbaranov.premierleague.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -8,11 +9,13 @@ import android.view.View;
 import android.widget.ProgressBar;
 
 import com.pms.kirillbaranov.premierleague.R;
+import com.pms.kirillbaranov.premierleague.entity.PlayersURL;
 import com.pms.kirillbaranov.premierleague.entity.Team;
 import com.pms.kirillbaranov.premierleague.entity.Wrapper.ResponseWrapper;
 import com.pms.kirillbaranov.premierleague.presenter.LeagueTablePresenter;
 import com.pms.kirillbaranov.premierleague.presenter.TeamsPresenter;
 import com.pms.kirillbaranov.premierleague.ui.RequestTask;
+import com.pms.kirillbaranov.premierleague.ui.TeamsItemViewHolder;
 import com.pms.kirillbaranov.premierleague.ui.helper.SimpleDividerItemDecoration;
 import com.pms.kirillbaranov.premierleague.ui.helper.TableLeagueRecycleViewAdapter;
 import com.pms.kirillbaranov.premierleague.ui.helper.TeamsRecyclerViewAdapter;
@@ -56,6 +59,12 @@ public class TeamsActivity extends BaseAppSideMenuActivity implements ITeamsView
         mTeamsPresenter.getCurrentTeams();
     }
 
+    private TeamsItemViewHolder.OnTeamClickListener mOnTeamClickListener = team -> {
+        Intent intent = new Intent(this, PlayersActivity.class)
+                .putExtra(PlayersURL.HREF, team.getLinks().getPlayersURL().getHref());
+        startActivity(intent);
+    };
+
     public void initView() {
         mTeamsPresenter = new TeamsPresenter(this, mUpdatingProgressBehaviour);
 
@@ -79,7 +88,7 @@ public class TeamsActivity extends BaseAppSideMenuActivity implements ITeamsView
         mTeamsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mTeamsRecyclerView.addItemDecoration(new SimpleDividerItemDecoration(this, R.drawable.simple_decoration_divider));
 
-        mTeamsAdapter = new TeamsRecyclerViewAdapter();
+        mTeamsAdapter = new TeamsRecyclerViewAdapter(mOnTeamClickListener);
         mTeamsRecyclerView.setAdapter(mTeamsAdapter);
     }
 

@@ -26,9 +26,6 @@ import com.pms.kirillbaranov.premierleague.ui.OnSingleClickListener;
 
 public class BaseAppSideMenuActivity extends AppCompatActivity {
 
-    public static final int REQUEST_CODE_EVENT = 1;
-    public static final int REQUEST_CODE_EVENT_2 = 2;
-
     private DrawerLayout mBaseDrawerLayout;
     private PercentFrameLayout mSideMenuDrawer;
     private ActionBarDrawerToggle mDrawerToggle;
@@ -112,10 +109,10 @@ public class BaseAppSideMenuActivity extends AppCompatActivity {
                 startActivity(new Intent(this, TableLeagueActivity.class));
                 break;
             case R.id.teams_button:
-                startActivityForResult(new Intent(this, TeamsActivity.class), REQUEST_CODE_EVENT);
+                startActivity(new Intent(this, TeamsActivity.class));
                 break;
             case R.id.fixtures_button:
-                startActivityForResult(new Intent(this, FixturesActivity.class), REQUEST_CODE_EVENT_2);
+                startActivity(new Intent(this, FixturesActivity.class));
                 break;
             default:
                 break;

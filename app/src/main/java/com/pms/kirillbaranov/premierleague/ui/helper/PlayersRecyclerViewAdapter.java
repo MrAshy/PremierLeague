@@ -4,6 +4,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 
 import com.pms.kirillbaranov.premierleague.R;
 import com.pms.kirillbaranov.premierleague.entity.Player;
@@ -19,9 +20,11 @@ import java.util.List;
 
 public class PlayersRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
+
     private List<Player> mPlayers;
 
-    PlayersRecyclerViewAdapter() { mPlayers = new ArrayList<>(); }
+    public PlayersRecyclerViewAdapter() {
+        mPlayers = new ArrayList<>(); }
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -39,7 +42,7 @@ public class PlayersRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerVie
         return mPlayers.size();
     }
 
-    public void setFixtures(Collection<Player> players) {
+    public void setPlayers(Collection<Player> players) {
         if (!mPlayers.isEmpty()) mPlayers.clear();
 
         mPlayers.addAll(players);
@@ -50,4 +53,7 @@ public class PlayersRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerVie
         if (!mPlayers.isEmpty()) mPlayers.clear();
         notifyDataSetChanged();
     }
+
+
+
 }

@@ -8,11 +8,14 @@ import com.pms.kirillbaranov.premierleague.R;
 import com.pms.kirillbaranov.premierleague.entity.Player;
 import com.pms.kirillbaranov.premierleague.utils.DateHelper;
 
+import java.util.Calendar;
+import java.util.Date;
+
 /**
  * Created by KirillBaranov on 12.12.16.
  */
 
-public class PlayersItemViewHolder extends RecyclerView.ViewHolder {
+public class PlayersItemViewHolder extends RecyclerView.ViewHolder  {
 
     private TextView mNumberTextView;
     private TextView mNameTextView;
@@ -44,13 +47,24 @@ public class PlayersItemViewHolder extends RecyclerView.ViewHolder {
         mPositionTextView.setText(R.string._position + player.getPosition());
 
         String birthday = DateHelper.DATE_FORMATTER.format(player.getBirthday());
-        mAgeTextView.setText(birthday);
+        String age = getAge(player.getBirthday());
+        mAgeTextView.setText(birthday + " (" + age + R.string._years + ")");
 
         mMarketValueTextView.setText(R.string._marketValue + player.getMarketValue());
         mNationalityTextView.setText(R.string._nationality + player.getNationality());
-
     }
 
+    private String getAge(Date birthday) {
+        Date currentDate = new Date();
+
+        Long diffInMillis = currentDate.getTime() - birthday.getTime();
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(diffInMillis);
+        int years = calendar.get(Calendar.YEAR);
+        String yearsStr = String.valueOf(years);
+        return yearsStr;
+    }
 
 
 }
