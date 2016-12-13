@@ -66,6 +66,10 @@ public class TableLeagueItemViewHolder extends RecyclerView.ViewHolder {
     }
 
     public void setContent(Standing standing) {
+
+        mTeamImageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
+        mTeamImageView.setAdjustViewBounds(true);
+
         Context context = mTeamImageView.getContext();
         String teamImageURL = standing.getImageUri();
 

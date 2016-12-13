@@ -67,7 +67,7 @@ public class FixturesActivity extends BaseAppSideMenuActivity implements IFixtur
 
     public void initToolbar() {
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
-        mToolbar.setTitle("Fixtures");
+        mToolbar.setTitle(getResources().getString(R.string._current_matchday));
         setSupportActionBar(mToolbar);
 
         mToolbar.setTitleTextColor(getResources().getColor(R.color.white));

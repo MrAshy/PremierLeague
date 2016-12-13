@@ -31,6 +31,8 @@
     <string name="_years"> years</string>
     <string name="updating_title">Updating&#8230;</string>
     <string name="players_title">Players</string>
+    <string name="_current_matchday">Current Matchday</string>
+    <string name="_plLeague">League Table (PL 16/17)</string>
 
     <string name="banner_ad_unit_id"> ca-app-pub-2424312303165349/1521757716</string>
 

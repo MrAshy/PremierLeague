@@ -76,7 +76,7 @@ public class TeamsActivity extends BaseAppSideMenuActivity implements ITeamsView
 
     public void initToolbar() {
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
-        mToolbar.setTitle("Teams");
+        mToolbar.setTitle(getResources().getString(R.string._teams));
         setSupportActionBar(mToolbar);
 
         mToolbar.setTitleTextColor(getResources().getColor(R.color.white));

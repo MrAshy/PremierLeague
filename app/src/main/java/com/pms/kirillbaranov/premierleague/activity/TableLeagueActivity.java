@@ -73,7 +73,7 @@ public class TableLeagueActivity extends BaseAppSideMenuActivity implements ITab
 
     public void initToolbar() {
             mToolbar = (Toolbar) findViewById(R.id.toolbar);
-            mToolbar.setTitle("League Table");
+            mToolbar.setTitle(getResources().getString(R.string._plLeague));
             setSupportActionBar(mToolbar);
 
             mToolbar.setTitleTextColor(getResources().getColor(R.color.white));

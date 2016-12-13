@@ -65,6 +65,10 @@ public class TeamsItemViewHolder extends RecyclerView.ViewHolder {
 
     public void setContent(Team team) {
         mTeam = team;
+
+        mTeamImageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
+        mTeamImageView.setAdjustViewBounds(true);
+
         Context context = mTeamImageView.getContext();
         String teamImageURL = team.getImageUrl();
 
