@@ -19,16 +19,26 @@ public class FixturesPresenter {
     private IFixturesView mFixturesView;
     private FixturesModel mFixturesModel;
 
-    private RequestTask.IProgressBehavior mUpdateProgressBehaviour;
 
-    public FixturesPresenter(IFixturesView view, RequestTask.IProgressBehavior updateProgressBehaviour) {
+    public FixturesPresenter(IFixturesView view) {
         mFixturesView = view;
         mFixturesModel = new FixturesModel();
-        mUpdateProgressBehaviour = updateProgressBehaviour;
     }
 
-    public void getCurrentFixtures() {
-        ((Activity) mFixturesView).runOnUiThread(new RequestTask<ResponseWrapper>(mUpdateProgressBehaviour) {
+    public void getCurrentFixtures(boolean refreshView) {
+        Activity activity = (Activity) mFixturesView;
+
+        if (activity != null) activity.runOnUiThread(new RequestTask<ResponseWrapper>(new RequestTask.IProgressBehavior() {
+            @Override
+            public void startTask() {
+                mFixturesView.startUpdating(refreshView);
+            }
+
+            @Override
+            public void endTask() {
+                mFixturesView.endUpdating();
+            }
+        }) {
             @Override
             protected ResponseWrapper doInBackground(Void... params) throws Exception {
                 return mFixturesModel.getFixtures();
@@ -36,7 +46,7 @@ public class FixturesPresenter {
 
             @Override
             protected void onSuccess(ResponseWrapper responseWrapper) {
-                mFixturesView.setContent(responseWrapper);
+                mFixturesView.setContent(responseWrapper, refreshView);
             }
         });
     }

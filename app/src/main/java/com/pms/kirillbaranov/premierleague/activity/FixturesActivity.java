@@ -1,6 +1,7 @@
 package com.pms.kirillbaranov.premierleague.activity;
 
 import android.os.Bundle;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -32,17 +33,8 @@ public class FixturesActivity extends BaseAppSideMenuActivity implements IFixtur
     private FixturesRecyclerViewAdapter mFixturesAdapter;
     private FixturesPresenter mFixturesPresenter;
 
-    private RequestTask.IProgressBehavior mUpdatingProgressBehaviour = new RequestTask.IProgressBehavior() {
-        @Override
-        public void startTask() {
-            mUpdatingProgressBar.setVisibility(View.VISIBLE);
-        }
+    private SwipeRefreshLayout mSwipeRefreshLayout;
 
-        @Override
-        public void endTask() {
-            mUpdatingProgressBar.setVisibility(View.INVISIBLE);
-        }
-    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,14 +43,24 @@ public class FixturesActivity extends BaseAppSideMenuActivity implements IFixtur
 
         initView();
         initToolbar();
-        mFixturesPresenter.getCurrentFixtures();
+        mFixturesPresenter.getCurrentFixtures(false);
     }
 
+    private SwipeRefreshLayout.OnRefreshListener mOnRefreshListener = () -> {
+        mSwipeRefreshLayout.setRefreshing(true);
+        mFixturesPresenter.getCurrentFixtures(false);
+    };
+
     public void initView() {
-        mFixturesPresenter = new FixturesPresenter(this, mUpdatingProgressBehaviour);
+        mFixturesPresenter = new FixturesPresenter(this);
 
         mFixturesRecyclerView = (RecyclerView) findViewById(R.id.fixtures_recycler_view);
         mUpdatingProgressBar = (ProgressBar) findViewById(R.id.fixtures_progress_bar);
+
+        mSwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.refresh_container);
+        mSwipeRefreshLayout.setDistanceToTriggerSync(200);
+        mSwipeRefreshLayout.setColorSchemeColors(getResources().getColor(R.color.primaryColor));
+        mSwipeRefreshLayout.setOnRefreshListener(mOnRefreshListener);
 
         initRecyclerView();
     }
@@ -82,8 +84,20 @@ public class FixturesActivity extends BaseAppSideMenuActivity implements IFixtur
     }
 
     @Override
-    public void setContent(ResponseWrapper responseWrapper) {
+    public void setContent(ResponseWrapper responseWrapper, boolean isViewRefreshed) {
         mResponseWrapper = responseWrapper;
         mFixturesAdapter.setFixtures(mResponseWrapper.getFixtures());
+    }
+
+    @Override
+    public void startUpdating(boolean isViewRefreshed) {
+        if (isViewRefreshed) mFixturesAdapter.clear();
+        if (mFixturesAdapter.getItemCount() == 0) mUpdatingProgressBar.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void endUpdating() {
+        if (mUpdatingProgressBar.getVisibility() == View.VISIBLE) mUpdatingProgressBar.setVisibility(View.INVISIBLE);
+        mSwipeRefreshLayout.setRefreshing(false);
     }
 }

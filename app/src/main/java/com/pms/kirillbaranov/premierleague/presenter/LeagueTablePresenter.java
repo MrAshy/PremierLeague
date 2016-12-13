@@ -19,16 +19,27 @@ public class LeagueTablePresenter {
     private ITableLeagueView mTableLeagueView;
     private TableLeagueModel mTableLeagueModel;
 
-    private RequestTask.IProgressBehavior mUpdateProgressBehaviour;
-
-    public LeagueTablePresenter(ITableLeagueView view, RequestTask.IProgressBehavior updateProgressBehavior) {
+    public LeagueTablePresenter(ITableLeagueView view) {
         mTableLeagueView = view;
         mTableLeagueModel = new TableLeagueModel();
-        mUpdateProgressBehaviour = updateProgressBehavior;
     }
 
-    public void getCurrentLeagueTable() {
-        ((Activity) mTableLeagueView).runOnUiThread(new RequestTask<LeagueTable>(mUpdateProgressBehaviour) {
+    public void getCurrentLeagueTable(boolean refreshView) {
+
+        Activity activity = (Activity) mTableLeagueView;
+        if (activity != null) activity.runOnUiThread(new RequestTask<LeagueTable>(new RequestTask.IProgressBehavior() {
+
+        @Override
+        public void startTask() {
+            mTableLeagueView.startUpdating(refreshView);
+        }
+
+        @Override
+        public void endTask() {
+            mTableLeagueView.endUpdating();
+        }
+    })
+        {
             @Override
             protected LeagueTable doInBackground(Void... params) throws Exception {
                 return mTableLeagueModel.getLeagueTable();
@@ -36,7 +47,7 @@ public class LeagueTablePresenter {
 
             @Override
             protected void onSuccess(LeagueTable leagueTable) {
-                mTableLeagueView.setContent(leagueTable);
+                mTableLeagueView.setContent(leagueTable, refreshView);
             }
         });
     }

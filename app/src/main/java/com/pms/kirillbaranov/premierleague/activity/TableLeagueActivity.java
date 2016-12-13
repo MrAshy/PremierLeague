@@ -33,21 +33,9 @@ public class TableLeagueActivity extends BaseAppSideMenuActivity implements ITab
     private SwipeRefreshLayout mSwipeRefreshLayout;
 
 
-    private RequestTask.IProgressBehavior mUpdatingProgressBehaviour = new RequestTask.IProgressBehavior() {
-        @Override
-        public void startTask() {
-            mUpdatingProgressBar.setVisibility(View.VISIBLE);
-        }
-
-        @Override
-        public void endTask() {
-            mUpdatingProgressBar.setVisibility(View.INVISIBLE);
-        }
-    };
-
     private SwipeRefreshLayout.OnRefreshListener mOnRefreshListener = () -> {
         mSwipeRefreshLayout.setRefreshing(true);
-        mTableLeaguePresenter.getCurrentLeagueTable();
+        mTableLeaguePresenter.getCurrentLeagueTable(false);
     };
 
     @Override
@@ -58,11 +46,11 @@ public class TableLeagueActivity extends BaseAppSideMenuActivity implements ITab
         initView();
         initToolbar();
 
-        mTableLeaguePresenter.getCurrentLeagueTable();
+        mTableLeaguePresenter.getCurrentLeagueTable(false);
     }
 
     public void initView() {
-        mTableLeaguePresenter = new LeagueTablePresenter(this, mUpdatingProgressBehaviour);
+        mTableLeaguePresenter = new LeagueTablePresenter(this);
 
         mTableLeagueRecyclerView = (RecyclerView) findViewById(R.id.table_league_recycler_view);
         mUpdatingProgressBar = (ProgressBar) findViewById(R.id.table_league_progress_bar);
@@ -106,7 +94,7 @@ public class TableLeagueActivity extends BaseAppSideMenuActivity implements ITab
     }
 
     @Override
-    public void setContent(LeagueTable leagueTable) {
+    public void setContent(LeagueTable leagueTable, boolean isRefreshedScreen) {
         mLeagueTable = leagueTable;
         mTableLeagueAdapter.setStandings(mLeagueTable.getStandings());
     }

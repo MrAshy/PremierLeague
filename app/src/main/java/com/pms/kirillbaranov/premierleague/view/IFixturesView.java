@@ -10,5 +10,7 @@ import java.util.Collection;
  */
 
 public interface IFixturesView {
-    public void setContent(ResponseWrapper responseWrapper);
+    public void setContent(ResponseWrapper responseWrapper, boolean isViewRefreshed);
+    void startUpdating(boolean isViewRefreshed);
+    void endUpdating();
 }
