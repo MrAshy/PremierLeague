@@ -7,10 +7,11 @@
     android:paddingLeft="8dp"
     android:paddingBottom="4dp">
 
+
 <com.pms.kirillbaranov.premierleague.ui.TypeFaceTextView
     android:id="@+id/ranking_text_view"
     style="@style/WrapContent"
-    android:minWidth="20dp"
+    android:minWidth="40dp"
     android:maxLines="1"
     android:layout_centerVertical="true"
     android:layout_marginEnd="@dimen/small"
@@ -40,7 +41,7 @@
         android:gravity="center"
         android:text="Manchester United"
         android:textColor="@color/black_opacity_87"
-        android:textSize="14sp"
+        android:textSize="13sp"
         app:typeFace="roboto_bold"
         />
     <LinearLayout
@@ -71,7 +72,7 @@
                     android:gravity="center"
                     android:text="@string/_gamesText"
                     android:textColor="@color/black_opacity_87"
-                    android:textSize="13sp"
+                    android:textSize="12sp"
                     app:typeFace="roboto_bold"
                     />
 
@@ -84,7 +85,7 @@
                     android:gravity="center"
                     android:text="15"
                     android:textColor="@color/black_opacity_87"
-                    android:textSize="13sp"
+                    android:textSize="12sp"
                     app:typeFace="roboto_bold"
                     />
             </LinearLayout>
@@ -103,7 +104,7 @@
                     android:gravity="center"
                     android:text="@string/_wins"
                     android:textColor="@color/black_opacity_87"
-                    android:textSize="13sp"
+                    android:textSize="12sp"
                     app:typeFace="roboto_bold"
                     />
 
@@ -117,7 +118,7 @@
                     android:gravity="center"
                     android:text="10"
                     android:textColor="@color/green_forest"
-                    android:textSize="13sp"
+                    android:textSize="12sp"
                     app:typeFace="roboto_bold"
                     />
 
@@ -130,7 +131,7 @@
                     android:gravity="center"
                     android:text="@string/_drawn"
                     android:textColor="@color/black_opacity_87"
-                    android:textSize="13sp"
+                    android:textSize="12sp"
                     app:typeFace="roboto_bold"
                     />
 
@@ -144,7 +145,7 @@
                     android:gravity="center"
                     android:text="10"
                     android:textColor="@color/yellow_turbo"
-                    android:textSize="13sp"
+                    android:textSize="12sp"
                     app:typeFace="roboto_bold"
                     />
 
@@ -157,7 +158,7 @@
                     android:gravity="center"
                     android:text="@string/_loses"
                     android:textColor="@color/black_opacity_87"
-                    android:textSize="13sp"
+                    android:textSize="12sp"
                     app:typeFace="roboto_bold"
                     />
                 <com.pms.kirillbaranov.premierleague.ui.TypeFaceTextView
@@ -170,7 +171,7 @@
                     android:gravity="center"
                     android:text="10"
                     android:textColor="@color/red_burgundy"
-                    android:textSize="13sp"
+                    android:textSize="12sp"
                     app:typeFace="roboto_bold"
                     />
 
@@ -199,7 +200,7 @@
                 android:gravity="center"
                 android:text="@string/_goalsText"
                 android:textColor="@color/black_opacity_87"
-                android:textSize="13sp"
+                android:textSize="12sp"
                 app:typeFace="roboto_bold"
                 />
 
@@ -213,7 +214,7 @@
                 android:gravity="center"
                 android:text="33"
                 android:textColor="@color/black_opacity_87"
-                android:textSize="13sp"
+                android:textSize="12sp"
                 app:typeFace="roboto_bold"
                 />
             </LinearLayout>
@@ -232,7 +233,7 @@
                     android:gravity="center"
                     android:text="@string/_goalsAgainst"
                     android:textColor="@color/black_opacity_87"
-                    android:textSize="13sp"
+                    android:textSize="12sp"
                     app:typeFace="roboto_bold"
                     />
 
@@ -246,7 +247,7 @@
                     android:gravity="center"
                     android:text="21"
                     android:textColor="@color/black_opacity_87"
-                    android:textSize="13sp"
+                    android:textSize="12sp"
                     app:typeFace="roboto_bold"
                     />
 
@@ -260,7 +261,7 @@
                     android:gravity="center"
                     android:text="@string/_goalsDifference"
                     android:textColor="@color/black_opacity_87"
-                    android:textSize="13sp"
+                    android:textSize="12sp"
                     app:typeFace="roboto_bold"
                     />
                 <com.pms.kirillbaranov.premierleague.ui.TypeFaceTextView
@@ -273,7 +274,7 @@
                     android:gravity="center"
                     android:text="7"
                     android:textColor="@color/black_opacity_87"
-                    android:textSize="13sp"
+                    android:textSize="12sp"
                     app:typeFace="roboto_bold"
                     />
             </LinearLayout>
@@ -294,7 +295,7 @@
                 android:gravity="center"
                 android:text="@string/_pointsText"
                 android:textColor="@color/black_opacity_87"
-                android:textSize="13sp"
+                android:textSize="12sp"
                 app:typeFace="roboto_bold"
                 />
 
@@ -307,7 +308,7 @@
                 android:gravity="center"
                 android:text="44"
                 android:textColor="@color/blue_dark_teal"
-                android:textSize="13sp"
+                android:textSize="12sp"
                 app:typeFace="roboto_bold"
                 />
         </LinearLayout>

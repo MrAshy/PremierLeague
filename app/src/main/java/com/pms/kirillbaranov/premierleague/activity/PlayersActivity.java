@@ -52,11 +52,13 @@ public class PlayersActivity extends BackToolbarActivity implements IPlayersView
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.players_layout);
+
+        mPlayersURL = getIntent().getStringExtra(PlayersURL.HREF);
 
         initView();
         initToolbar();
 
-        mPlayersURL = getIntent().getStringExtra(PlayersURL.HREF);
         mPlayersPresenter.getCurrentPlayers(mPlayersURL);
     }
 

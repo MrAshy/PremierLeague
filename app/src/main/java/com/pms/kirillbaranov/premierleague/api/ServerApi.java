@@ -85,7 +85,7 @@ public class ServerApi {
     }
 
     public ResponseWrapper readFixtures() {
-        return getObjectResponse(URL+"competitions/426/fixtures?matchday=15", ResponseWrapper.class);
+        return getObjectResponse(URL+"competitions/426/fixtures?matchday=16", ResponseWrapper.class);
     }
 
     public ResponseWrapper readPlayers(String playerURL) {

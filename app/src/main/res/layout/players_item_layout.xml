@@ -13,7 +13,7 @@
     <com.pms.kirillbaranov.premierleague.ui.TypeFaceTextView
         android:id="@+id/players_number_text_view"
         style="@style/WrapContent"
-        android:minWidth="20dp"
+        android:minWidth="80dp"
         android:maxLines="1"
         android:layout_centerVertical="true"
         android:layout_marginEnd="@dimen/small"

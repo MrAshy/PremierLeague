@@ -11,4 +11,6 @@ import java.util.Collection;
 
 public interface ITableLeagueView {
     void setContent(LeagueTable leagueTable);
+    void startUpdating(boolean isScreenRefreshed);
+    void endUpdating();
 }

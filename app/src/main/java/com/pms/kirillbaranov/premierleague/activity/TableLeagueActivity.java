@@ -1,6 +1,7 @@
 package com.pms.kirillbaranov.premierleague.activity;
 
 import android.os.Bundle;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -29,6 +30,8 @@ public class TableLeagueActivity extends BaseAppSideMenuActivity implements ITab
     private TableLeagueRecycleViewAdapter mTableLeagueAdapter;
     private LeagueTablePresenter mTableLeaguePresenter;
 
+    private SwipeRefreshLayout mSwipeRefreshLayout;
+
 
     private RequestTask.IProgressBehavior mUpdatingProgressBehaviour = new RequestTask.IProgressBehavior() {
         @Override
@@ -40,6 +43,11 @@ public class TableLeagueActivity extends BaseAppSideMenuActivity implements ITab
         public void endTask() {
             mUpdatingProgressBar.setVisibility(View.INVISIBLE);
         }
+    };
+
+    private SwipeRefreshLayout.OnRefreshListener mOnRefreshListener = () -> {
+        mSwipeRefreshLayout.setRefreshing(true);
+        mTableLeaguePresenter.getCurrentLeagueTable();
     };
 
     @Override
@@ -58,6 +66,11 @@ public class TableLeagueActivity extends BaseAppSideMenuActivity implements ITab
 
         mTableLeagueRecyclerView = (RecyclerView) findViewById(R.id.table_league_recycler_view);
         mUpdatingProgressBar = (ProgressBar) findViewById(R.id.table_league_progress_bar);
+
+        mSwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.refresh_container);
+        mSwipeRefreshLayout.setDistanceToTriggerSync(200);
+        mSwipeRefreshLayout.setColorSchemeColors(getResources().getColor(R.color.primaryColor));
+        mSwipeRefreshLayout.setOnRefreshListener(mOnRefreshListener);
 
         initRecyclerView();
     }
@@ -78,6 +91,18 @@ public class TableLeagueActivity extends BaseAppSideMenuActivity implements ITab
 
         mTableLeagueAdapter = new TableLeagueRecycleViewAdapter();
         mTableLeagueRecyclerView.setAdapter(mTableLeagueAdapter);
+    }
+
+    @Override
+    public void startUpdating(boolean isScreenRefreshed) {
+        if (isScreenRefreshed) mTableLeagueAdapter.clear();
+        if (mTableLeagueAdapter.getItemCount() == 0) mUpdatingProgressBar.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void endUpdating() {
+        if (mUpdatingProgressBar.getVisibility() == View.VISIBLE) mUpdatingProgressBar.setVisibility(View.INVISIBLE);
+        mSwipeRefreshLayout.setRefreshing(false);
     }
 
     @Override
