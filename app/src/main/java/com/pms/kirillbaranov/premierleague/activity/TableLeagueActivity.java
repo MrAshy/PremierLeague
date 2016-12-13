@@ -8,6 +8,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ProgressBar;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 import com.pms.kirillbaranov.premierleague.R;
 import com.pms.kirillbaranov.premierleague.entity.LeagueTable;
 import com.pms.kirillbaranov.premierleague.presenter.LeagueTablePresenter;
@@ -35,7 +38,7 @@ public class TableLeagueActivity extends BaseAppSideMenuActivity implements ITab
 
     private SwipeRefreshLayout.OnRefreshListener mOnRefreshListener = () -> {
         mSwipeRefreshLayout.setRefreshing(true);
-        mTableLeaguePresenter.getCurrentLeagueTable(false);
+        mTableLeaguePresenter.getCurrentLeagueTable();
     };
 
     @Override
@@ -46,7 +49,12 @@ public class TableLeagueActivity extends BaseAppSideMenuActivity implements ITab
         initView();
         initToolbar();
 
-        mTableLeaguePresenter.getCurrentLeagueTable(false);
+        MobileAds.initialize(getApplicationContext(), getResources().getString(R.string.banner_ad_unit_id   ));
+        AdView mAdView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+
+        mTableLeaguePresenter.getCurrentLeagueTable();
     }
 
     public void initView() {
@@ -82,8 +90,7 @@ public class TableLeagueActivity extends BaseAppSideMenuActivity implements ITab
     }
 
     @Override
-    public void startUpdating(boolean isScreenRefreshed) {
-        if (isScreenRefreshed) mTableLeagueAdapter.clear();
+    public void startUpdating() {
         if (mTableLeagueAdapter.getItemCount() == 0) mUpdatingProgressBar.setVisibility(View.VISIBLE);
     }
 
@@ -94,7 +101,7 @@ public class TableLeagueActivity extends BaseAppSideMenuActivity implements ITab
     }
 
     @Override
-    public void setContent(LeagueTable leagueTable, boolean isRefreshedScreen) {
+    public void setContent(LeagueTable leagueTable) {
         mLeagueTable = leagueTable;
         mTableLeagueAdapter.setStandings(mLeagueTable.getStandings());
     }

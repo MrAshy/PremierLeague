@@ -25,13 +25,13 @@ public class FixturesPresenter {
         mFixturesModel = new FixturesModel();
     }
 
-    public void getCurrentFixtures(boolean refreshView) {
+    public void getCurrentFixtures() {
         Activity activity = (Activity) mFixturesView;
 
         if (activity != null) activity.runOnUiThread(new RequestTask<ResponseWrapper>(new RequestTask.IProgressBehavior() {
             @Override
             public void startTask() {
-                mFixturesView.startUpdating(refreshView);
+                mFixturesView.startUpdating();
             }
 
             @Override
@@ -46,7 +46,7 @@ public class FixturesPresenter {
 
             @Override
             protected void onSuccess(ResponseWrapper responseWrapper) {
-                mFixturesView.setContent(responseWrapper, refreshView);
+                mFixturesView.setContent(responseWrapper);
             }
         });
     }

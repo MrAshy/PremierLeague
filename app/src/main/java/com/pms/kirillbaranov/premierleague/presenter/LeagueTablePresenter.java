@@ -24,14 +24,14 @@ public class LeagueTablePresenter {
         mTableLeagueModel = new TableLeagueModel();
     }
 
-    public void getCurrentLeagueTable(boolean refreshView) {
+    public void getCurrentLeagueTable() {
 
         Activity activity = (Activity) mTableLeagueView;
         if (activity != null) activity.runOnUiThread(new RequestTask<LeagueTable>(new RequestTask.IProgressBehavior() {
 
         @Override
         public void startTask() {
-            mTableLeagueView.startUpdating(refreshView);
+            mTableLeagueView.startUpdating();
         }
 
         @Override
@@ -47,7 +47,7 @@ public class LeagueTablePresenter {
 
             @Override
             protected void onSuccess(LeagueTable leagueTable) {
-                mTableLeagueView.setContent(leagueTable, refreshView);
+                mTableLeagueView.setContent(leagueTable);
             }
         });
     }

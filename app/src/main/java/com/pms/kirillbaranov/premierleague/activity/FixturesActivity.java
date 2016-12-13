@@ -43,12 +43,12 @@ public class FixturesActivity extends BaseAppSideMenuActivity implements IFixtur
 
         initView();
         initToolbar();
-        mFixturesPresenter.getCurrentFixtures(false);
+        mFixturesPresenter.getCurrentFixtures();
     }
 
     private SwipeRefreshLayout.OnRefreshListener mOnRefreshListener = () -> {
         mSwipeRefreshLayout.setRefreshing(true);
-        mFixturesPresenter.getCurrentFixtures(false);
+        mFixturesPresenter.getCurrentFixtures();
     };
 
     public void initView() {
@@ -84,14 +84,13 @@ public class FixturesActivity extends BaseAppSideMenuActivity implements IFixtur
     }
 
     @Override
-    public void setContent(ResponseWrapper responseWrapper, boolean isViewRefreshed) {
+    public void setContent(ResponseWrapper responseWrapper) {
         mResponseWrapper = responseWrapper;
         mFixturesAdapter.setFixtures(mResponseWrapper.getFixtures());
     }
 
     @Override
-    public void startUpdating(boolean isViewRefreshed) {
-        if (isViewRefreshed) mFixturesAdapter.clear();
+    public void startUpdating() {
         if (mFixturesAdapter.getItemCount() == 0) mUpdatingProgressBar.setVisibility(View.VISIBLE);
     }
 

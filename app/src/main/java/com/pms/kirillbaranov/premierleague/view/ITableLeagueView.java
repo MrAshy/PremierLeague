@@ -10,7 +10,7 @@ import java.util.Collection;
  */
 
 public interface ITableLeagueView {
-    void setContent(LeagueTable leagueTable, boolean isViewRefreshed);
-    void startUpdating(boolean isViewRefreshed);
+    void setContent(LeagueTable leagueTable);
+    void startUpdating();
     void endUpdating();
 }
