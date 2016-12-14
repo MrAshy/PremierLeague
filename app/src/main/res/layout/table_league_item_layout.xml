@@ -41,7 +41,7 @@
         android:gravity="center"
         android:text="Manchester United"
         android:textColor="@color/black_opacity_87"
-        android:textSize="13sp"
+        android:textSize="12sp"
         app:typeFace="roboto_bold"
         />
     <LinearLayout

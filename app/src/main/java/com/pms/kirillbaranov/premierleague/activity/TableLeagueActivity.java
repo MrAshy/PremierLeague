@@ -1,10 +1,12 @@
 package com.pms.kirillbaranov.premierleague.activity;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.telephony.TelephonyManager;
 import android.view.View;
 import android.widget.ProgressBar;
 
@@ -49,9 +51,16 @@ public class TableLeagueActivity extends BaseAppSideMenuActivity implements ITab
         initView();
         initToolbar();
 
+        final TelephonyManager tm =(TelephonyManager)getBaseContext().getSystemService(Context.TELEPHONY_SERVICE);
+
+        String deviceid = tm.getDeviceId();
+
         MobileAds.initialize(getApplicationContext(), getResources().getString(R.string.banner_ad_unit_id   ));
         AdView mAdView = (AdView) findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
+        AdRequest adRequest = new AdRequest.Builder()
+                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
+                .addTestDevice("0C33C9E6CCC1DF29983DA6FC50F5862A")
+                .build();
         mAdView.loadAd(adRequest);
 
         mTableLeaguePresenter.getCurrentLeagueTable();
