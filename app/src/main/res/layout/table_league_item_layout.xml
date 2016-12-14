@@ -5,7 +5,8 @@
     android:layout_height="wrap_content"
     android:background="@color/white"
     android:paddingLeft="8dp"
-    android:paddingBottom="4dp">
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp">
 
 
 <com.pms.kirillbaranov.premierleague.ui.TypeFaceTextView
@@ -93,7 +94,8 @@
             <LinearLayout
                 android:id="@+id/games_secondary_layout"
                 style="@style/WrapContent"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:paddingBottom="5dp">
 
                 <com.pms.kirillbaranov.premierleague.ui.TypeFaceTextView
                     android:id="@+id/wins_name_text_view"
@@ -221,7 +223,8 @@
             <LinearLayout
                 android:id="@+id/secondary_goals_layout"
                 style="@style/WrapContent"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:paddingBottom="5dp">
 
                 <com.pms.kirillbaranov.premierleague.ui.TypeFaceTextView
                     android:id="@+id/goals_against_name_text_view"

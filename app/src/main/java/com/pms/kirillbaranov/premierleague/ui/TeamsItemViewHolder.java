@@ -74,7 +74,12 @@ public class TeamsItemViewHolder extends RecyclerView.ViewHolder {
 
         parseSVG(context, teamImageURL);
 
-        mTeamNameTextView.setText(team.getName());
+        String teamTrim = (team.getName()).trim();
+        mTeamNameTextView.setText(teamTrim);
+
+        int visibility = (team.getCode() == null) ? View.GONE : View.VISIBLE;
+
+        mTeamCodeTextView.setVisibility(visibility);
         mTeamCodeTextView.setText(team.getCode());
         mTeamMarketValueTextView.setText(team.getSquadMarketValue());
     }
