@@ -51,10 +51,6 @@ public class TableLeagueActivity extends BaseAppSideMenuActivity implements ITab
         initView();
         initToolbar();
 
-        final TelephonyManager tm =(TelephonyManager)getBaseContext().getSystemService(Context.TELEPHONY_SERVICE);
-
-        String deviceid = tm.getDeviceId();
-
         MobileAds.initialize(getApplicationContext(), getResources().getString(R.string.banner_ad_unit_id   ));
         AdView mAdView = (AdView) findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder()
